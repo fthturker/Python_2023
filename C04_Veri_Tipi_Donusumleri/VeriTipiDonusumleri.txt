@@ -1,0 +1,99 @@
+Veri tipi Dönüşümleri
+Pythonda ve diğer çoğu programlama dilinde veritiplerinin birbirine dönüştürülmesi oldukça önemlidir.
+Bazı zaman bir ondalıklı sayıyı tamsayıya dönüştürme, hatta ve hatta bir string'i tamsayıya dönüştürme işlemleri programlarımızı yazarken büyük önem taşır. 
+
+Tamsayıyı Ondalıklı Sayıya Çevirme
+Bir tamsayı değeri(integer) ondalıklı sayıya(float) çevirmek için float() fonksiyonunu kullanabiliriz.
+
+# Çevireceğimiz sayıyı parantez içine alıyoruz.
+a = 43
+float(a)
+43.0
+
+float(-1)
+-1.0
+
+float(9)
+9.0
+
+Ondalıklı Sayıyı Tamsayıya Çevirme
+Bir ondalıklı sayıyı tamsayıya çevirmek için int() fonksiyonunu kullanabiliriz.Sonuç, ondalıklı sayının tam kısmı olarak karşımıza çıkacak.
+int(4.7)
+4
+
+int(3.14)
+3
+
+int(10.3435435345345345)
+10
+
+a = 4
+b = 2
+int(a/b)
+2
+
+Sayıları Stringlere Çevirme
+Bir sayıyı string'e çevirmek için str() fonksiyonunu kullanabiliriz.Sayıyı oluşturan tüm rakamlar veya noktalar birer karaktere dönüşecek.
+
+a = 32324324
+b = str(a)
+b
+'32324324'
+
+len(b)
+8
+
+t = 3.14343
+y = str(t)
+y
+
+'3.14343'
+len(y)
+7
+
+Stringleri Tamsayıya Çevirme
+Bir string'i bir tamsayıya çevirmek istediğimiz zaman int() fonksiyonunu kullanabiliriz. 
+Ancak biraz dikkatli olmamızda fayda var. Dönüştürme işlemini yaparken stringin herbir karakterinin bir rakam olduğundan emin olmalıyız.
+
+# Doğru
+a = "32434324324234"
+b = int(a)
+b
+32434324324234
+
+# Hatalı - Her bir karakterin 10'luk tabanda olması gerekli.
+a = "dasdasd343435"
+b = int(a)
+b
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-16-6ba3143bafb7> in <module>()
+      1 # Hatalı
+      2 a = "dasdasd343435"
+----> 3 b = int(a)
+      4 b
+
+ValueError: invalid literal for int() with base 10: 'dasdasd343435'
+
+Stringleri Ondalıklı Sayıya Çevirme
+Bir string'i bir ondalıklı sayıya çevirmek istediğimiz zaman float() fonksiyonunu kullanabiliriz.
+Ancak biraz dikkatli olmamızda fayda var. Dönüştürme işlemini yaparken stringin ondalıklı sayı formatına uygun olduğundan emin olmalıyız.
+
+# Doğru Kod
+a = "3.1444545"
+b = float(a)
+b
+3.1444545
+# Hatalı Kod
+a = "3.14.324324"
+b = float(a)
+b
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-2-c6b33919771d> in <module>()
+      1 # Hatalı Kod
+      2 a = "3.14.324324"
+----> 3 b = float(a)
+      4 b
+
+ValueError: could not convert string to float: '3.14.324324'

@@ -1,0 +1,161 @@
+For Döngüleri
+
+in Operatörü
+Pythondaki in operatörü , bir elemanın başka bir listede,demette veya stringte (karakter dizileri) bulunup
+bulunmadığını kontrol eder. Kullanımı şu şekildedir;
+
+"a" in "merhaba"
+True
+"mer" in "merhaba"
+True
+"t" in "merhaba"
+False
+4 in [1,2,3,4]
+True
+10 in [1,2,3,4]
+False
+4 in (1,2,3)
+False
+for döngüsünü daha iyi anlamak için örneklerimize bakalım.
+
+Listeler Üzerinde Gezinmek
+liste = [1,2,3,4,5,6,7]
+
+for eleman in liste:
+    print("Eleman",eleman)
+Eleman 1
+Eleman 2
+Eleman 3
+Eleman 4
+Eleman 5
+Eleman 6
+Eleman 7
+# Liste elemanlarını toplama
+liste = [1,2,3,4,5,6,7]
+toplam = 0
+for eleman in liste:
+    toplam += eleman
+print("Toplam",toplam)
+Toplam 28
+# Çift elemanları bastırma
+liste = [1,2,3,4,5,6,7,8,9]
+
+for eleman in liste:
+    if eleman % 2 == 0:
+        print(eleman)
+2
+4
+6
+8
+Karakter Dizileri Üzerinde Gezinmek (Stringler)
+s =  "Python"
+for karakter in s:
+    print(karakter)
+P
+y
+t
+h
+o
+n
+# Her bir karakterleri 3 ile çarpma
+s = "Python"
+
+for karakter in s:
+    print(karakter * 3)
+PPP
+yyy
+ttt
+hhh
+ooo
+nnn
+Demetler üzerinde gezinmek (Demetler)
+# Listelerle aynı mantık
+demet =  (1,2,3,4,5,6,7)
+
+for eleman in demet:
+    print(eleman)
+1
+2
+3
+4
+5
+6
+7
+Demetlerin üzerinde for döngüsü uygularken aslında çok pratik bir yöntem bulunuyor. Aşağıdaki örneğe bakalım.
+
+# Listelerin için 2 boyutlu demetler
+
+liste = [(1,2),(3,4),(5,6),(7,8)]
+
+for eleman in liste:
+    print(eleman) # Herbir elemanın  demet olduğu görebiliyoruz.
+(1, 2)
+(3, 4)
+(5, 6)
+(7, 8)
+# Demet içindeki herbir elemanı almak için pratik yöntem
+liste = [(1,2),(3,4),(5,6),(7,8)]
+
+for (i,j) in liste:
+    print(i,j)
+1 2
+3 4
+5 6
+7 8
+# Demet içindeki elemanları çarpalım.
+liste = [(1,2,3),(4,5,6),(7,8,9),(10,11,12)]
+for (i,j,k) in liste:
+    print(i * j * k)
+6
+120
+504
+1320
+Sözlükler üzerinde gezinmek (Dictionary)
+Hatırlarsanız, sözlükler konusunda 3 adet metod görmüştük. (keys(),values(),items()*). İsterseniz bunları burada hatırlayalım.
+
+sözlük = {"bir":1,"iki":2,"üç":3,"dört":4}
+
+sözlük.keys()
+dict_keys(['bir', 'iki', 'üç', 'dört'])
+sözlük.values()
+dict_values([1, 2, 3, 4])
+sözlük.items()
+dict_items([('bir', 1), ('iki', 2), ('üç', 3), ('dört', 4)])
+Python sonuçları dict_keys,dict_values,dict_items olarak vermesine rağmen , bunlar üzerinde liste veya demet üzerinde gezinir gibi for döngüsüyle gezinebiliriz.
+
+# Metodları kullanmadan sözlük üzerinde gezinmek - Sadece anahtarları alabiliyoruz.
+sözlük = {"bir":1,"iki":2,"üç":3,"dört":4}
+
+for eleman in sözlük:
+    print(eleman)
+bir
+iki
+üç
+dört
+# keys() - Aynı şey
+sözlük = {"bir":1,"iki":2,"üç":3,"dört":4}
+
+for eleman in sözlük.keys():
+    print(eleman)
+bir
+iki
+üç
+dört
+# values()
+sözlük = {"bir":1,"iki":2,"üç":3,"dört":4}
+
+for eleman in sözlük.values():
+    print(eleman)
+1
+2
+3
+4
+# items()
+sözlük = {"bir":1,"iki":2,"üç":3,"dört":4}
+
+for (i,j) in sözlük.items():
+    print("Anahtar:",i,"Değer:",j)
+Anahtar: bir Değer: 1
+Anahtar: iki Değer: 2
+Anahtar: üç Değer: 3
+Anahtar: dört Değer: 4

@@ -1,0 +1,119 @@
+While Döngüleri
+while döngüleri belli bir koşul sağlandığı sürece bloğundaki işlemleri gerçekleştirmeye devam eder.
+while döngülerinin sona ermesi için koşul durumunun bir süre sonra False olması gereklidir.
+
+Yapısı şu şekildedir;
+
+                            while (koşul):
+                                İşlem1
+                                İşlem2
+                                İşlem3
+                                  //
+                                  //
+while döngülerini daha iyi anlamak için örneklerimize bakalım.
+
+# Döngüde i değerlerini ekrana yazdırma
+
+i = 0
+
+while (i < 10):
+    print("i'nin değeri",i)
+    i += 1 # Koşulun bir süre sonra False olması için gerekli - Unutmayalım
+i'nin değeri 0
+i'nin değeri 1
+i'nin değeri 2
+i'nin değeri 3
+i'nin değeri 4
+i'nin değeri 5
+i'nin değeri 6
+i'nin değeri 7
+i'nin değeri 8
+i'nin değeri 9
+# Döngüde i değerlerini ekrana yazdırma
+
+i = 0
+
+while (i < 20):
+    print("i'nin değeri",i)
+    i += 2 # Koşulun bir süre sonra False olması için gerekli - Unutmayalım
+i'nin değeri 0
+i'nin değeri 2
+i'nin değeri 4
+i'nin değeri 6
+i'nin değeri 8
+i'nin değeri 10
+i'nin değeri 12
+i'nin değeri 14
+i'nin değeri 16
+i'nin değeri 18
+# Ekrana 40 defa "Python Öğreniyorum" yazdıralım.
+i = 0
+
+while (i < 40):
+    print("Python Öğreniyorum")
+    i +=1
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+Python Öğreniyorum
+# Liste üzerinde indeks ile gezinme
+liste = [1,2,3,4,5]
+
+a = 0
+
+while (a < len(liste)):
+    print("Indeks:",a,"Eleman:",liste[a])
+    a +=1
+Indeks: 0 Eleman: 1
+Indeks: 1 Eleman: 2
+Indeks: 2 Eleman: 3
+Indeks: 3 Eleman: 4
+Indeks: 4 Eleman: 5
+Sonsuz Döngü Olayları
+while döngüsü kullanırken biraz dikkatli olmamızda fayda var.
+Çünkü, while döngü koşulunun bir süre sonra False olması gerekecek ki döngümüz sonlanabilsin.
+Ancak eğer biz while döngülerinde bu durumu unutursak , döngümüz sonsuza kadar çalışacaktır.
+Biz buna sonsuz döngü olayı diyoruz. Örneğimize bakalım
+
+# Bu kodu çaıştırmayalım. Jupyter sıkıntı çıkarabilir :)
+i = 0
+while (i < 10):
+    print(i)
+    # i değişkenini artırma işlemi yapmadığımız için i değişkeninin değeri sürekli 0 kalıyor
+    # ve döngü koşulu sürekli True kalıyor.

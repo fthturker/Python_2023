@@ -1,0 +1,125 @@
+Karakter Dizileri (Stringler)
+Pythonda bir veri tipi olan Stringler veya Türkçe ismiyle karakter dizileri gerçek hayatta kullandığımız yazıların aynısıdır.
+Bu veri tipi aslında her biri bir karakter olan bir dizidir. 
+Örnek olarak, "ali" stringi sırasıyla a,l,i harflerinden veya karakterlerden oluşmaktadır.
+
+String Oluşturma
+Python'da string oluşturmanın birçok yolu bulunmaktadir.Bunların hangisini kullanacağınız tamamıyla size bağlıdır.İsterseniz string oluşturma işlemlerini görmeye çalışalım.
+
+#Tek tırnak ile
+'Mustafa Murat Coşkun'
+'Mustafa Murat Coşkun'
+#Çift Tırnak ile
+"Mustafa Murat Coşkun"
+'Mustafa Murat Coşkun'
+# 3 tırnak ile
+"""Mustafa Murat Coşkun"""
+'Mustafa Murat Coşkun'
+
+Burada dikkat etmemiz gereken nokta, eğer bir çift tırnak ile oluşturacaksak, stringin oluşturulması bitirmeyi yine çift tırnak ile yapmalıyız.
+
+Şimdi de bir tane string veri tipinde değişken oluşturalım. Stringler de bir veri tipi oldukları için bunlardan değişken oluşturup kullanabiliriz.
+a = "Merhaba"
+a
+'Merhaba'
+
+naber = "Naber iyi misin ?"
+naber
+'Naber iyi misin ?'
+
+String Indeksleme ve Parçalama
+Stringler birer karakter dizileri oldukları için her bir karakterin aslında string içinde bir yeri vardır. 
+Örnek olarak "ali" stringinde a,l ve i karakterlerinin yerleri indeks olarak adlandırılır.
+Pythonda ve genellikle çoğu programlama dilinde (Octave hariç) stringlerin indekslenmesi "0" dan başlamaktadır.
+ Şimdi isterseniz bir string içindeki karakterlere indeks yoluyla nasıl ulaşacağımıza bakalım.
+
+# 0. elemana  ulaşalım . Bunun için [] operatörünü kullanacağız.
+a = "ali"
+a[0]
+'a'
+
+# 1.eleman
+a[1]
+'l'
+
+Pythonda stringler baştan olduğu gibi sondan da indekslenebilirler. Sondan başlayarak -1,-2 ... şeklinde indekslenirler
+# Sondaki eleman "-1" eleman
+a = "murat"
+a[-1]
+'t'
+
+Peki uzun bir string'in sadece belirli bir kısmını elde etmek için ne yapacağız ? Bunun için indeksleri, : ve [] işaretini kullanacağız. Formülümüz şu şekilde ;
+[başlama indeksi : bitiş indeksi : atlama değeri]
+
+a = "Python Programlama Dili"
+# 4. indeksten başla 10.indekse kadar(dahil değil) al.
+a[4:10]
+'on Pro'
+
+# Başlangıç değeri belirtilmemişse en baştan başlayarak alır.
+a[:10]
+'Python Pro'
+
+# Bitiş değeri belirtilmemişse en sonuna kadar alır.
+a[4:]
+'on Programlama Dili'
+
+# İki değer de belirtilmemişse tüm stringi al.
+a[:]
+'Python Programlama Dili'
+
+#Son karaktere kadar al.
+a[:-1]
+'Python Programlama Dil'
+
+# Baştan sona 2 değer atlaya atlaya stringi al.
+a[::2]
+'Pto rgalm ii'
+
+# 4.indeksten 12'nci indekse 3'er atlayarak stringi al.
+a[4:12:3]
+'oPg'
+
+# Baştan sona -1 atlayarak stringi al. (String'i ters çevirme)
+a[::-1]
+'iliD amalmargorP nohtyP'
+
+String Özellikleri
+Bir string'in uzunluğunu nasıl buluruz ? Bunun için Python'da len() fonksiyonu bulunmaktadır.
+# len() fonksiyonunu kullanma.
+a = "Python Programlama Dili"
+len(a)
+23
+
+Peki sizce bir string'in belli bir karakterini direkt olarak değiştirebilir miyiz ?
+a = "Murat"
+# Biraz ilkokulluyum değil mi :) Ancak Python buna izin vermiyor Allahtan :)
+a[0] = 'T'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-38-87cff85377e0> in <module>()
+      1 # Biraz ilkokulluyum değil mi :) Ancak Python buna izin vermiyor Allahtan :)
+----> 2 a[0] = 'T'
+
+TypeError: 'str' object does not support item assignment
+Burada Python bu işleme izin vermedi. Gördüğümüz gibi, bir string'in karakterlerini direkt olarak değiştiremiyoruz.Çünkü stringler böyle bir işlemi desteklemiyor.
+
+Peki, Pythonda stringler toplanabiliyor mu ? Python'da bunu yapmak da mümkündür.
+
+# Stringleri toplayalım yani birbirine ekleyelim.
+a = "Python "
+b = "Programlama "
+c = "Dili"
+a + b + c
+'Python Programlama Dili'
+
+a = "Mustafa " 
+a = a + "Murat Coşkun" # Burada stringleri birleştirerek yine a değişkenine atıyoruz. 
+a
+'Mustafa Murat Coşkun'
+Bir string ile bir sayıyı da çarpabiliriz.
+
+# Python * 3 aslında Python + Python + Python işlemine eşdeğerdir.
+"Python" * 3
+'PythonPythonPython'
+

@@ -1,0 +1,80 @@
+Sözlükler
+Sözlükler veya İngilizce ismiyle dictionaryler aynı gerçek hayattaki sözlükler gibi davranan bir veritipidir. Bu veritipi, şimdiye kadar gördüğümüz tüm veritiplerinden yapısı gereği farklıdır. Sözlüğün içindeki her bir eleman indeks ile değil, anahtar (key), değer (value) olarak tutulur. Bu anlamda gerçek hayattaki sözlüklere oldukça benzerler. Örneğin, elimize bir ingilizce-Türkçe sözlük alıp freedom kelimesini(key ya da anahtar) aradığımız zaman karşılık değer özgürlük (değer ya da value) olarak karşımıza çıkar. Sözlükleri de bu şekilde düşünebiliriz.
+
+Şimdi isterseniz bir sözlük oluşturarak konumuza başlayalım.
+
+Sözlük Oluşturmak
+# Süslü Parantez ve iki nokta (:) ile anahtar değerlerimizi yerleştirelim.
+sözlük1 = {"sıfır":0,"bir":1,"iki":2,"üç":3}
+sözlük1
+{'bir': 1, 'iki': 2, 'sıfır': 0, 'üç': 3}
+# Boş bir sözlük
+sözlük2 = {}
+# Boş bir sözlük - dict() ile
+sözlük2 = dict()
+sözlük2
+{}
+Sözlük Değerlerine Erişmek ve Sözlüğe Değer Eklemek
+Sözlük veritipinin gerçek hayattaki sözlüklere çok benzediğini söylemiştik. Öyleyse, bir değeri (value) elde etmek için, indeksleri değil anahtarları (key) kullanacağız.
+
+sözlük1
+{'bir': 1, 'iki': 2, 'sıfır': 0, 'üç': 3}
+# "bir" anahtarına karşılık gelen değeri buluyoruz.
+sözlük1["bir"]
+1
+# "iki" anahtarına karşılık gelen değeri buluyoruz.
+sözlük1["iki"]
+2
+# Olmayan bir anahtar
+sözlük1["beş"]
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-9-10d9d9010d5b> in <module>()
+      1 # Olmayan bir anahtar
+----> 2 sözlük1["beş"]
+
+KeyError: 'beş'
+a = {"bir" : [1,2,3,4], "iki": [[1,2],[3,4],[5,6]],"üç" : 15}
+# "iki" anahtarının değeri
+a["iki"]
+[[1, 2], [3, 4], [5, 6]]
+# İçiçe listeleri biliyoruz.
+a["iki"][1][1]
+4
+a["üç"]
+15
+a["üç"] += 5
+a["üç"]
+20
+a
+{'bir': [1, 2, 3, 4], 'iki': [[1, 2], [3, 4], [5, 6]], 'üç': 20}
+Bir sözlüğe dinamik olarak da eleman ekleyebiliriz.
+
+# Sözlük oluşturalım.
+a = {"bir":1,"iki":2,"üç":3}
+a["dört"] = 4
+a
+{'bir': 1, 'dört': 4, 'iki': 2, 'üç': 3}
+Dikkat ederseniz yeni eklediğimiz anahtar ve değer sözlüğün sonuna eklenmedi. Burada sözlüklerin bir özelliğini daha görüyoruz. Sözlükler diğer veritiplerinden farklı olarak sıralı olmayan bir veritipidir.
+
+İç içe Sözlükler
+Tıpkı listeler gibi, iç içe sözlükler de oluşturulabilir.
+
+# İç içe sözlük
+
+a = {"sayılar":{"bir":1,"iki":2,"üç":3},"meyveler":{"kiraz":"yaz","portakal":"kış","erik":"yaz"}}
+a["sayılar"]["bir"]
+1
+a["meyveler"]["kiraz"]
+'yaz'
+Temel Sözlük Metodları
+yeni_sözlük = {"bir":1,"iki":2,"üç":3}
+# values() metodu sözlüğün değerlerini(value) bir liste olarak döner.
+yeni_sözlük.values()
+dict_values([1, 2, 3])
+# keys() metodu sözlüğün anahtarlarını(key) bir liste olarak döner.
+yeni_sözlük.keys()
+dict_keys(['bir', 'iki', 'üç'])
+# items() metodu sözlüğün anahtar ve değerlerini bir liste içinde demet olarak döner.
+yeni_sözlük.items()
+dict_items([('bir', 1), ('iki', 2), ('üç', 3)])

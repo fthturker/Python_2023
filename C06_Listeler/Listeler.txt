@@ -1,0 +1,205 @@
+Listeler
+Listeler yapıları gereği stringlere oldukça benzerler ve kullanıldıkları yerler de çok yararlı olan bir veritipidir. 
+Tıpkı stringler gibi ,indekslenirler,parçalanırlar ve üzerinde değişik işlemler yapabildiğimiz metodlar bulunur. 
+Ancak listelerin stringlerden önemli farkları da bulunmaktadır.
+Stringler konusundan bildiğimiz kadarıyla stringler değiştirilemez bir veri tipidir. Ancak, listelerimiz değiştirilebilir bir veritipidir.
+
+Bir listede her veritipinden elemanı saklayabiliriz. Bu anlamda sıralı bir diziye benzer.
+
+       1.Liste oluşturma
+       2.Indeksleme ve Parçalama
+       3.Temel Liste Metodları ve İşlemleri
+       4.İç içe Listeler                                                                                                 
+
+
+Liste Oluşturma
+Listeler bir [] köşeli parantez içine veriler veya değerler konarak oluşturulabilir.
+
+# liste değişkeni. Değişik veri tiplerinden değerleri saklayabiliyoruz.
+liste =  [3,4,5,6,"Elma",3.14,5.324]
+liste
+[3, 4, 5, 6, 'Elma', 3.14, 5.324]
+
+liste2 = [3,4,5,6,7,8,9]
+liste2
+[3, 4, 5, 6, 7, 8, 9]
+
+# Boş liste
+bos_liste = []
+bos_liste
+[]
+
+# Boş liste . list() fonksiyonuyla da oluşturulabilir.
+bos_liste = list()
+bos_liste
+[]
+
+# len fonksiyonu listeler üzerinde de kullanılabilir.
+liste3 = [3,4,5,6,6,7,8,9,0,0,0]
+len(liste3)
+11
+
+Bir string list() fonksiyonu yardımıyla listeye dönüştürülebilir.
+
+s =  "Merhaba"
+lst =  list(s)
+lst
+['M', 'e', 'r', 'h', 'a', 'b', 'a']
+
+Listeleri Indeksleme ve Parçalama
+Listeleri indeksleme ve parçalama stringlerle birebir olarak aynıdır.
+
+liste = [3,4,5,6,7,8,9,10]
+liste
+[3, 4, 5, 6, 7, 8, 9, 10]
+
+# 0. eleman 
+liste[0]
+3
+
+# 4. eleman 
+liste[4]
+7
+
+# Sonuncu Eleman
+liste[len(liste)-1]
+10
+
+# Sonuncu Eleman
+liste[-1]
+10
+
+# İlk Eleman
+liste[-len(liste)]
+3
+
+# Baştan 4. indekse kadar (dahil değil)
+liste[:4]
+[3, 4, 5, 6]
+# 1.indeksten 5.indekse kadar
+liste[1:5]
+[4, 5, 6, 7]
+liste[5:]
+[8, 9, 10]
+liste[::2]
+[3, 5, 7, 9]
+liste[::-1]
+[10, 9, 8, 7, 6, 5, 4, 3]
+
+Temel Liste Metodları ve İşlemleri
+Bu kısımda da listelerde yapabileceğimiz temel işlemleri ve bazı temel metodları öğreneceğiz. 
+Listelerin daha bir çok metodunu kursun ileriki kısımlarında görüyor olacağız.
+
+Bir listeyi birbirine toplama işlemini stringlerdeki gibi yapabiliriz.
+
+liste1 =  [1,2,3,4,5]
+liste2 =  [6,7,8,9,10]
+liste1 + liste2
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Bir listeye bir tane eleman eklemek içinse aşağıdaki işlemi uygulayabiliriz.
+
+liste = [1,2,3,4]
+liste =  liste + ["Murat"]
+liste
+[1, 2, 3, 4, 'Murat']
+
+# Listeler direk olarak değiştirilebilirler.
+liste[0] = 10
+liste
+[10, 2, 3, 4, 'Murat']
+
+# Şöyle bir kullanım da mümkündür.
+liste[:2] = [40,50]
+liste
+[40, 50, 3, 4, 'Murat']
+
+Bir listeyi bir tamsayıyla da çarpabiliriz.
+
+liste = [1,2,3,4,5]
+liste * 3
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+liste # Ama gördüğümüz gibi listemiz değişmiyor.
+[1, 2, 3, 4, 5]
+liste = liste * 3 
+
+liste # Eşitleme yaptığımız için liste değişti.
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+Listeler, diğer programlama dillerindeki arraylere göre oldukça esnektir. 
+Belli bir boyutları yoktur ve ekleme, çıkarma yapmak oldukça kolaydır.
+
+append metodu
+append metodu, verdiğimiz değeri listeye eklememizi sağlar.
+
+liste = [3,4,5,6]
+liste.append(7)
+liste
+[3, 4, 5, 6, 7]
+
+liste.append("Murat")
+liste
+[3, 4, 5, 6, 7, 'Murat']
+
+pop metodu
+Bu metod, içine değer vermezsek listenin son indeksindeki elemanı, 
+değer verirsek verdiğimiz değere karşılık gelen indeksteki elemanı listeden atar ve attığı elemanı ekrana basar.
+
+liste = [1,2,3,4,5]
+liste.pop()
+5
+liste
+[1, 2, 3, 4]
+
+eleman = liste.pop(2)
+eleman
+3
+
+liste=[1, 2, 4]
+liste.append("Murat")
+liste
+[1, 2, 4, 'Murat']
+
+liste.pop()
+'Murat'
+liste
+[1, 2, 4]
+
+Aslında zamanı gelmişken söylemekte fayda var. Liste elemanlarına ulaşırken eğer olmayan bir indeksi verirsek Python bizlere hata verecektir.
+liste = [12,54,67,67]
+liste[50]
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-41-621e5ad1f358> in <module>()
+----> 1 liste[50]
+
+IndexError: list index out of range
+sort metodu
+sort metodu listenin elemanlarını sıralamamızı sağlar. Hemen kullanımına bakalım.
+
+liste = [34,1,56,334,23,2,3,19]
+liste.sort() # Küçükten büyüğe sıralar.
+liste
+liste.sort(reverse = True) # Büyükten küçüğe sıralar.
+liste
+liste = ["Elma","Armut","Muz","Kiraz"]
+liste.sort() # Alfabetic olarak küçükten büyüğe
+liste
+liste = ["Elma","Armut","Muz","Kiraz"]
+liste.sort(reverse = True) # Alfabetic olarak büyükten küçüğe 
+liste
+İç içe Listeler
+Bir listenin içinde başka bir liste bulundurmak mümkündür. Bunlara Pythonda içiçe listeler denmektedir. Bu tip bir özellik, Pythonda ağaç yapılarında veya matris yapılarında oldukça kullanışlı olmaktadır.
+
+# 3 Tane liste oluşturalım.
+
+liste1 = [1,2,3]
+liste2 = [4,5,6]
+liste3 = [7,8,9]
+
+yeniliste = [liste1,liste2,liste3]
+yeniliste
+Şimdi, 2. listenin ilk elemanına nasıl ulaşacağımıza bakalım.
+
+# 1.elemanın 0.elemanı
+yeniliste[1][0]

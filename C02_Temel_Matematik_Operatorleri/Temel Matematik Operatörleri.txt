@@ -1,0 +1,132 @@
+
+Matematik Operatörleri
+
+Toplama İşlemi (+)
+a = 14
+b = 15
+a + b
+29
+
+i =  3.1
+j  = 4.8
+i+j
+7.9
+
+Çıkarma İşlemi (-)
+a =  28
+b = 35
+c = 40
+a-b-c
+-47
+
+t = -1
+y = 5
+t-y
+-6
+
+k = 3.1
+l = 5.8
+k -l 
+-2.6999999999999997
+
+Çarpma İşlemi (*)
+a = 4
+b = 5
+a *b
+20
+i = 3.14
+
+j = 4.5
+i *j
+14.13
+
+a = 3
+b = 4
+c = 5
+a *b *c
+60
+
+a = 3 
+b = 3.14
+a *b
+9.42
+
+Bölme İşlemi (/)
+4 / 2
+2.0
+10 / 3
+3.3333333333333335
+22 / 7
+3.142857142857143
+
+Şimdi, burada matematikten farklı olarak bir şey gerçekleşti. 
+"4 / 2" işleminin sonucunun "2" olarak çıkması gerekirken, sonuç "2.0" olarak, yani ondalıklı olarak(float) çıktı.
+Bu özellik, Python 3'e işlem sonucunun daha kesin bir şekilde sağlanması için konulmuş bir özellik.
+
+Tamsayı Bölmesi (//)
+Bu operatör, bir sayının başka bir sayıya bölümünden ortaya çıkan bölüm sonucunu vermektedir.
+
+4 // 2
+2
+
+# 13'ün 4 ile bölümünden kalan bölüm sonucu 3tür.
+13 // 4
+3
+22 // 7
+3
+40 // 7
+5
+
+Kalanı Bulma (%)
+Bu operatör de , bir sayının başka bir sayıya bölümünden kalan sonucunu bulmamızı sağlar.
+
+# 13'ün 4 ile bölümünden kalan 1'dir.
+13 % 4
+1
+14 % 2
+0
+330 % 111
+108
+
+Üs bulma (**)
+Bu operatör bir sayının üssünü bulmamızı sağlar. Örnek olarak operatörün solundaki sayının sağdaki sayıya göre üssünü ekrana basar.
+
+# 4^3
+4 ** 3
+64
+2 ** 4
+16
+3.14 ** 3
+30.959144000000002
+
+Peki bir sayının karekökünü nasıl bulacağız ? Matematikten bildiğimiz gibi, bir sayının karekökü , o sayının 1/2 (0.5). üssüdür. 
+O zaman örneğimizle 64 sayısının karekökünü bulmaya çalışalım.
+
+# 64'ün karekökü 
+64 ** 0.5
+8.0
+İşaret değiştirme (-)
+Programlarımızda bazen bir sayının işaretini değiştirmek isteyebiliriz.Bunun için de bu operatör işimize yarayabilir.
+
+a = 4
+-a
+-4
+b = -13
+-b
+13
+
+Operatörleri beraber kullanma ve İşlem sırası
+Bütün bu öğrendiğimiz şeyleri beraber nasıl kullanabiliriz? Bunun için matematikteki işlem sırasını biliyorsak çok rahat edeceğiz, çünkü Pythondaki işlem sırası matematiktekiyle birebir aynıdır. Nedir bu işlem sırası ? Kurallar şunlar ;
+
+1. Parantez içi her zaman önce yapılır.
+2. Çarpma ve Bölme her zaman Toplama ve Çıkarma işlemine göre önce yapılır.
+3. İşlemler soldan sağa değerlendirilir.
+
+Ancak, buradaki işlemleri ezberlememize hiç gerek yok. Kafamızın karıştığı yerler de işlemleri parantez içine almak, hayat kurtarır :) Şimdi örneklere bakalım.
+
+8 + 4 * 3 /2 - 18
+-4.0
+#Kafamız karışıyorsa paranteze alalım.
+
+8 + ((4 * 3) /2) - 18
+-4.0

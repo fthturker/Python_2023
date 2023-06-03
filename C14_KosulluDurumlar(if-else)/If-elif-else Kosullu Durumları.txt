@@ -1,0 +1,177 @@
+Koşullu Durumlar - if - elif - else koşullu durumları
+
+if-elif-else Blokları
+Önceki konumuzda koşullu durumlarımızla sadece tek bir koşulu kontrol edebiliyorduk.
+Ancak programlamada bir durum bir çok koşula bağlı olabilir.
+Örneğin bir hesap makinesi programı yazdığımızda kullanıcının girdiği işlemlere göre
+koşullarımızı belirleyebiliriz. Bu tür durumlar için if-elif-else kalıplarını kullanırız.
+Kullanımı şu şekildedir;
+
+           if koşul:
+               Yapılacak İşlemler
+           elif başka bir koşul:
+               Yapılacak İşlemler
+           elif başka bir koşul:
+               Yapılacak İşlemler
+
+                //
+                //
+           else:
+               Yapılacak İşlemler
+Programlarımızda, Kaç tane koşulumuz var ise o kadar elif bloğu oluşturabiliriz.
+Ayrıca else in yazılması zorunlu değildir. if - elif - else kalıplarında, hangi koşul sağlanırsa
+program o bloğu çalıştırır ve if-elif-blokları sona erer.
+Şimdi isterseniz kullanıcıya işlem seçtirdiğimiz bir programla , bu kalıbı öğrenmeye başlayalım.
+
+işlem =  int(input("İşlem seçiniz:")) # 3 tane işlemimiz olsun.
+
+if işlem == 1:
+    print("1. işlem seçildi.")
+elif işlem == 2:
+    print("2. işlem seçildi.")
+elif işlem == 3:
+    print("3. işlem seçildi.")
+else:
+    print("Geçersiz İşlem!")
+İşlem seçiniz:1
+1. işlem seçildi.
+işlem =  int(input("İşlem seçiniz:")) # 3 tane işlemimiz olsun.
+
+if işlem == 1:
+    print("1. işlem seçildi.")
+elif işlem == 2:
+    print("2. işlem seçildi.")
+elif işlem == 3:
+    print("3. işlem seçildi.")
+else:
+    print("Geçersiz İşlem!")
+İşlem seçiniz:3
+3. işlem seçildi.
+işlem =  int(input("İşlem seçiniz:")) # 3 tane işlemimiz olsun.
+
+if işlem == 1:
+    print("1. işlem seçildi.")
+elif işlem == 2:
+    print("2. işlem seçildi.")
+elif işlem == 3:
+    print("3. işlem seçildi.")
+else:
+    print("Geçersiz İşlem!")
+İşlem seçiniz:4
+Geçersiz İşlem!
+
+Programlarda else kalıbının kullanılmasına gerek yoktur.
+Buradaki kodda biz diğer durumlar için sadece opsiyonel bir else bloğu koyduk.
+Kodumuz else bloğu olmadan da çalışabilecektir.
+Ancak bu durumda yanlış bir işlem girilirse ekrana herhangi bir şeyin yazılmadığını göreceğiz.
+Yani, else bloğu kullanmak tamamen size bağlı.
+
+işlem =  int(input("İşlem seçiniz:")) # 3 tane işlemimiz olsun.
+
+if işlem == 1:
+    print("1. işlem seçildi.")
+elif işlem == 2:
+    print("2. işlem seçildi.")
+elif işlem == 3:
+    print("3. işlem seçildi.")
+İşlem seçiniz:4
+Peki , if koşulu olmadan elif bloklarını yazmak mümkün mü ? Pythonda böyle bir kullanım hataya yol açacaktır.
+
+işlem =  int(input("İşlem seçiniz:")) # 3 tane işlemimiz olsun.
+
+elif işlem == 2:
+    print("2. işlem seçildi.")
+elif işlem == 3:
+    print("3. işlem seçildi.")
+else:
+    print("Geçersiz İşlem!")
+  File "<ipython-input-5-a8d75ad60a73>", line 3
+    elif işlem == 2:
+       ^
+SyntaxError: invalid syntax
+if-if-if Blokları
+Bu blokları öğrenmeden önce isterseniz öğrendiğimiz bilgilerle,
+bir harf notu hesaplama sistemi yapalım. Daha sonra bu kalıpları anlamaya çalışalım.
+
+note = float(input("Notunuzu giriniz:"))
+
+if note >= 90:
+    print("AA")
+elif note >= 85:
+    print("BA")
+elif note >= 90:
+    print("BA")
+elif note >= 80:
+    print("BB")
+elif note >= 75:
+    print("CB")
+elif note >= 70:
+    print("CC")
+elif note >= 65:
+    print("DC")
+elif note >= 60:
+    print("DD")
+else:
+    print("Dersten Kaldınız")
+Burada eğer herhangi bir bloğumuz koşulu sağlarsa print işlemi gerçekleşecek ve programımız sonlanacaktır.
+Ancak acaba elif bloklarını if bloklarına çevirirsek programımız nasıl çalışacak ? Hemen bakalım.
+
+note = float(input("Notunuzu giriniz:"))
+
+if note >= 90:
+    print("AA")
+if note >= 85:
+    print("BA")
+if note >= 90:
+    print("BA")
+if note >= 80:
+    print("BB")
+if note >= 75:
+    print("CB")
+if note >= 70:
+    print("CC")
+if note >= 65:
+    print("DC")
+if note >= 60:
+    print("DD")
+else:
+    print("Dersten Kaldınız")
+Notunuzu giriniz:93
+AA
+BA
+BA
+BB
+CB
+CC
+DC
+DD
+note = float(input("Notunuzu giriniz:"))
+
+if note >= 90:
+    print("AA")
+if note >= 85:
+    print("BA")
+if note >= 90:
+    print("BA")
+if note >= 80:
+    print("BB")
+if note >= 75:
+    print("CB")
+if note >= 70:
+    print("CC")
+if note >= 65:
+    print("DC")
+if note >= 60:
+    print("DD")
+else:
+    print("Dersten Kaldınız")
+Notunuzu giriniz:80
+BB
+CB
+CC
+DC
+DD
+Burada gördüğümüz gibi programımız beklenmedik bir şekilde çalıştı.
+Çünkü Pythonda programlar her zaman bütün if bloklarını kontrol eder ve
+koşullar doğruysa bu blokları çalıştırır.
+İşte böyle not hesaplama gibi programlarda elif kullanmamızın sebebi budur.

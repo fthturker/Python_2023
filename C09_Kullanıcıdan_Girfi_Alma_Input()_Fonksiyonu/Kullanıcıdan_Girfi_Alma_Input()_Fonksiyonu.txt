@@ -1,0 +1,75 @@
+Kullanıcıdan Girdi Alma - input() Fonksiyonu
+Programlama yaparken kullanıcıdan girdi almak oldukça önemlidir.
+Pythonda kullanıcıdan girdi almamızı sağlayan input() fonksiyonu bulunmaktadır.
+
+input() fonksiyonu kullanımı
+input() fonksiyonu şu şekilde kullanılabilir.
+
+input() # Çalıtırdığımız zaman input fonksiyonu bizden bir girdi bekler.
+25
+'25'
+Eğer istersek fonksiyonun içine bir değer de gönderebiliriz.
+
+input("Lütfen bir sayı giriniz:")
+Lütfen bir sayı giriniz:25
+'25'
+Kullanıcıdan aldığımız değeri input() fonksiyonu yoluyla şu şekilde elde edebiliriz.
+
+a = input("Lütfen bir sayı giriniz:") # Kullanıcıdan aldığımız değer a değişkenine eşit olacak.
+print("Kullanıcının girdiği değer:",a)
+Lütfen bir sayı giriniz:25
+Kullanıcının girdiği değer: 25
+Kullanıcının girdiği değer input fonksiyonundan string olarak bize döner.
+
+a = input("Lütfen bir sayı giriniz:")
+print(type(a))
+Lütfen bir sayı giriniz:26
+<class 'str'>
+Eğer biz bir sayı ile işlem yapacaksak kullanıcıdan aldığımız değere (stringi) float ya da int fonksiyonuyla veri tipi dönüştürme işlemi yapmamız gerekir. Çünkü aşağıdaki gibi bir program yanlış çalışacaktır.
+
+# Hatalı Çalışma
+a = input("Lütfen bir sayı giriniz:")
+print(a * 3) # Girdiğimiz değer 5 ise sonucu 15 bekleriz. Ancak sonuç 555 şeklinde ortaya çıkar.
+Lütfen bir sayı giriniz:5
+555
+
+# Doğru Çalışma
+a = int(input("Lütfen bir sayı giriniz:")) # Veri tipi dönüşümü
+print(a * 3)
+Lütfen bir sayı giriniz:5
+15
+
+# Hatalı Çalışma
+a = input("Lütfen bir sayı giriniz:")
+print(a * 3) # Girdiğimiz değer 5.4 ise sonucu 16.2 bekleriz. Ancak sonuç 5.45.45.4 şeklinde ortaya çıkar.
+Lütfen bir sayı giriniz:5.4
+5.45.45.4
+
+# Doğru Çalışma
+a = float(input("Lütfen bir sayı giriniz:"))
+print(a * 3) # Girdiğimiz değer 5.4 ise sonucu 16.2 bekleriz. Ancak sonuç 5.45.45.4 şeklinde ortaya çıkar.
+Lütfen bir sayı giriniz:5.4
+16.200000000000003
+Bir tane örnek program yazalım.
+
+a = int(input("Birinci Sayı:"))
+b = int(input("İkinci Sayı:"))
+c = int(input("Üçüncü Sayı:"))
+
+print("Toplamları:",a+b+c)
+Birinci Sayı:12
+İkinci Sayı:24
+Üçüncü Sayı:54
+Toplamları: 90
+Peki kullanıcı eğer yanlış değer girerse ne olacak ?
+
+a = int(input("Sayı giriniz:")) # Dönüştüremediğimiz için hataya yol açıldı.
+print(a)
+Sayı giriniz:213123sadasdasd
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-2-a9fc3b45ce8b> in <module>()
+----> 1 a = int(input("Sayı giriniz:"))
+      2 print(a)
+
+ValueError: invalid literal for int() with base 10: '213123sadasdasd'

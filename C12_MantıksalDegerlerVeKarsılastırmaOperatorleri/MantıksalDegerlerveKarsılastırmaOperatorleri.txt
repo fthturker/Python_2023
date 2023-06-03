@@ -1,0 +1,67 @@
+Mantıksal Değerler ve Karşılaştırma Operatörleri
+Bu konuda, koşullu durumları incelemeden önce bilmemiz gereken mantıksal değerleri ve
+karşılaştırma operatörlerini öğrenmeye çalışacağız.
+
+Mantıksal Değerler (Boolean)
+Mantıksal değerler ya da ingilizce ismiyle boolean değerler aslında Pythonda bir veri tipidir ve
+iki değere sahiplerdir: True ve False. Şimdi bu değerlerden değişkenler oluşturalım.
+
+a =  True
+print(type(a))
+<class 'bool'>
+b = False
+print(type(b))
+Pythonda bir sayı değeri eğer 0'dan farklıysa True, 0 ise False olarak anlam kazanır.
+Bunu bool() fonksiyonuyla dönüştürme yaparak görebiliriz.
+
+bool(12.4)
+True
+bool(0.0)
+False
+bool(121212)
+True
+bool(-1)
+True
+bool(0)
+False
+Bool değerleri ayrıca birazdan göreceğimiz bir karşılaştırma operatöründen sonra ortaya çıkan sonuç değeridir
+
+1 > 2 # 1 2 den büyük olmadığı için sonuç False olacaktır.
+False
+1 < 2 # 1 2 den küçük olduğu için sonuç True olacaktır.
+True
+Ayrıca Pythonda eğer bir değişkenin değerini sonradan belirlemek isterseniz geçici olarak
+bu değişken None (atanmamış anlamında) değerine eşitleyebilirsiniz.
+
+a = None # Henüz değer atamadık
+print(a)
+None
+a = 4 # Şimdi değer atıyoruz.
+print(a)
+4
+Karşılaştırma Operatörleri
+Operatör	Görevi	Örnek
+==	İki değer birbirine eşitse True, değilse False değer döner.	2 == 2 (True) , 2 == 3 (False)
+!=	İki değer birbirine eşit değilse True, diğer durumda False döner.	2 != 2 (False), 2 != 3 (True)
+>	Soldaki değer sağdaki değerden büyükse True, değilse False döner.	3 > 2 (True), 2 > 3 (False)
+<	Soldaki değer sağdaki değerden küçükse True, değilse False döner.	2 < 3 (True) , 3 < 2 (False)
+>=	Soldaki değer sağdaki değerden büyükse veya sağdaki değere eşitse True, değilse False döner.	3 >= 2 (True),3 >= 3 (True) , 2 >= 3 (False)
+<=	Soldaki değer sağdaki değerden küçükse veya sağdaki değere eşitse True, değilse False döner.	3 <= 2 (False),3 <= 3 (True) , 2 <= 3 (True)
+Örneklere bakalım.
+
+"Mehmet" == "Mehmet"
+True
+"Mehmet" == "Murat"
+False
+"Mehmet" != "Murat"
+True
+"Oğuz" < "Murat" # Alfabetik olarak bakar.
+False
+2 < 3
+True
+54 >= 54
+True
+98 > 32
+True
+34 <= 45
+True
