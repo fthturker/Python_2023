@@ -76,15 +76,12 @@ while True: # Sonsuz döngü. Nasıl sonlandırabiliriz ?
 
 İsminiz(Çıkmak için q tuşuna basın.):q
 Çıkış yapılıyor...
-İşte break ifadesi bu kadar ! Şimdi de continue ifadesine bakalım.
 
 continue ifadesi
 continue ifadesi break'e göre biraz daha az kullanılan bir ifadedir. Anlamı şu şekildedir;
 
     Döngü herhangi bir yerde ve herhangi bir zamanda continue ifadesiyle karşılaştığı zaman
     geri kalan işlemlerini yapmadan direk bloğunun başına döner.
-
-continue ifadesini anlamak için örneklerimize bakalım.
 
 liste = [1,2,3,4,5,6,7,8,9,10]
 
@@ -127,6 +124,8 @@ while (i < 10):
         continue
 
     i += 1
+
+
 i = 0 # Kodun sorunsuz hali
 
 while (i < 10):
